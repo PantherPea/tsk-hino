@@ -1,0 +1,57 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif; /* Sets a readable font */
+    margin: 0; /* Removes default body margin */
+    display: flex; /* Enables flexbox for centering content */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    min-height: 100vh; /* Ensures the body takes at least the full viewport height */
+    background-color: #f0f2f5; /* Light background color */
+    color: #333; /* Dark text color */
+}
+
+/* Container for the app content */
+.container {
+    background-color: #ffffff; /* White background for the container */
+    padding: 40px; /* Padding around the content */
+    border-radius: 12px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center; /* Centers text inside the container */
+    max-width: 500px; /* Maximum width for the container */
+    width: 90%; /* Responsive width */
+}
+
+/* Styling for the main heading */
+h1 {
+    color: #0056b3; /* A nice blue color for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+/* Styling for paragraphs */
+p {
+    font-size: 1.1em; /* Slightly larger font size */
+    line-height: 1.6; /* Better line spacing */
+    margin-bottom: 30px; /* Space below the paragraph */
+}
+
+/* Styling for the button */
+button {
+    background-color: #007bff; /* Blue background for the button */
+    color: white; /* White text on the button */
+    border: none; /* No border */
+    padding: 12px 25px; /* Padding inside the button */
+    border-radius: 8px; /* Rounded corners for the button */
+    font-size: 1.05em; /* Readable font size */
+    cursor: pointer; /* Changes cursor to a pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for the button */
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+table, tr, td {
+  border: 1px solid;
+  text-align: center;
+}

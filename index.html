@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HINO Data Management</title>
+    <!-- Link to our CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main content of our web app -->
+    <div class="container">
+        <h1>Welcome to HINO Data Management App</h1>
+        <p id="message">Click the button below to see data</p>
+        
+        <!-- <div id="hino-data">
+            Loading data... -->
+        <!-- </div> -->
+        <!-- <h1>CSV Data Table</h1> -->
+        <button>
+            <input type="file" id="getFile" accept=".csv"></input>
+        </button>
+        <br><br>
+        <button id="myButton">Show Data</button>
+        <br><br>
+        <button id="getDatafromDrive">Show Data</button>
+        <table id="csvTable"></table>
+    </div>
+
+    <!-- Link to our JavaScript file -->
+    <!-- It's generally good practice to put script tags at the end of the body -->
+    <!-- This ensures the HTML content is loaded before the script tries to interact with it -->
+    <script src="script.js"></script>
+</body>
+</html>
