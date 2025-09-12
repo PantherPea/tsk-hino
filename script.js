@@ -1,3 +1,9 @@
+//How to: https://developers.google.com/workspace/drive/api/quickstart/js
+//Link to console: https://console.cloud.google.com/apis/credentials?authuser=2&project=tsk-hino&supportedpurview=project
+//Google Drive API Key: AIzaSyD1nY8vX5b2r3H4j5k6l7m8n9o0pqrstuvwxyz
+//Google Drive Client ID: 1234567890-abcdefghijklmnopqrstuvwxyz.apps.googleusercontent.com
+//API Key: AIzaSyDgcyC-ZYeqN-v_4sEqWQDKGrKN7Umc_os
+
 // Get a reference to the button element using its ID
 const myButton = document.getElementById('myButton');
 // Get a reference to the paragraph element using its ID
