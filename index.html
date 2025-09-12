@@ -8,7 +8,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
+    <!-- Main content of our web app -->
+    <div class="container">
+        <h1>Welcome to HINO Data Management App</h1>
+
+        <!--Google API-->
+        <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
     <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
 
     <pre id="content" style="white-space: pre-wrap;"></pre>
@@ -145,9 +150,6 @@
     <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
     <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
 
-    <!-- Main content of our web app -->
-    <div class="container">
-        <h1>Welcome to HINO Data Management App</h1>
         <p id="message">Click the button below to see data</p>
         
         <!-- <div id="hino-data">
