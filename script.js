@@ -110,9 +110,6 @@ getDatafromDrive.addEventListener('click', function() {
       const auth_but = document.getElementById('authorize_button');//.style.visibility = 'hidden';
       const signout_but = document.getElementById('signout_button');//.style.visibility = 'hidden';
 
-      auth_but.addEventListener('click', handleAuthClick);
-      signout_but.addEventListener('click', handleSignoutClick);
-
       /**
        * Callback after api.js is loaded.
        */
@@ -217,3 +214,8 @@ getDatafromDrive.addEventListener('click', function() {
             'Files:\n');
         document.getElementById('content').innerText = output;
       }
+
+      auth_but.addEventListener('click', handleAuthClick);
+      signout_but.addEventListener('click', handleSignoutClick);
+
+      
