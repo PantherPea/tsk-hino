@@ -107,8 +107,8 @@ getDatafromDrive.addEventListener('click', function() {
       let gapiInited = false;
       let gisInited = false;
 
-      const auth_but = document.getElementById('authorize_button');//.style.visibility = 'hidden';
-      const signout_but = document.getElementById('signout_button');//.style.visibility = 'hidden';
+      const auth_but = document.getElementById('authorize_button').style.visibility = 'hidden';
+      const signout_but = document.getElementById('signout_button').style.visibility = 'hidden';
 
       /**
        * Callback after api.js is loaded.
@@ -148,46 +148,19 @@ getDatafromDrive.addEventListener('click', function() {
        */
       function maybeEnableButtons() {
         if (gapiInited && gisInited) {
-          document.getElementById('authorize_button').style.visibility = 'visible';
+          auth_but.style.visibility = 'visible';
         }
       }
 
       /**
        *  Sign in the user upon button click.
        */
-      function handleAuthClick() {
-        tokenClient.callback = async (resp) => {
-          if (resp.error !== undefined) {
-            throw (resp);
-          }
-          document.getElementById('signout_button').style.visibility = 'visible';
-          document.getElementById('authorize_button').innerText = 'Refresh';
-          await listFiles();
-        };
-
-        if (gapi.client.getToken() === null) {
-          // Prompt the user to select a Google Account and ask for consent to share their data
-          // when establishing a new session.
-          tokenClient.requestAccessToken({prompt: 'consent'});
-        } else {
-          // Skip display of account chooser and consent dialog for an existing session.
-          tokenClient.requestAccessToken({prompt: ''});
-        }
-      }
+      
 
       /**
        *  Sign out the user upon button click.
        */
-      function handleSignoutClick() {
-        const token = gapi.client.getToken();
-        if (token !== null) {
-          google.accounts.oauth2.revoke(token.access_token);
-          gapi.client.setToken('');
-          document.getElementById('content').innerText = '';
-          document.getElementById('authorize_button').innerText = 'Authorize';
-          document.getElementById('signout_button').style.visibility = 'hidden';
-        }
-      }
+      
 
       /**
        * Print metadata for first 10 files.
@@ -215,7 +188,34 @@ getDatafromDrive.addEventListener('click', function() {
         document.getElementById('content').innerText = output;
       }
 
-      auth_but.addEventListener('click', handleAuthClick);
-      signout_but.addEventListener('click', handleSignoutClick);
+      auth_but.addEventListener('click', function handleAuthClick() {
+        tokenClient.callback = async (resp) => {
+          if (resp.error !== undefined) {
+            throw (resp);
+          }
+          signout_but.style.visibility = 'visible';
+          auth_but.innerText = 'Refresh';
+          await listFiles();
+        };
+
+        if (gapi.client.getToken() === null) {
+          // Prompt the user to select a Google Account and ask for consent to share their data
+          // when establishing a new session.
+          tokenClient.requestAccessToken({prompt: 'consent'});
+        } else {
+          // Skip display of account chooser and consent dialog for an existing session.
+          tokenClient.requestAccessToken({prompt: ''});
+        }
+      });
+      signout_but.addEventListener('click', function handleSignoutClick() {
+        const token = gapi.client.getToken();
+        if (token !== null) {
+          google.accounts.oauth2.revoke(token.access_token);
+          gapi.client.setToken('');
+          document.getElementById('content').innerText = '';
+          auth_but.innerText = 'Authorize';
+          signout_but.style.visibility = 'hidden';
+        }
+      });
 
       
